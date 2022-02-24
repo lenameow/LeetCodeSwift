@@ -8,47 +8,55 @@
 import Foundation
 
 class Solution {
-  func fourSum(_ nums: [Int], _ target: Int) -> [[Int]] {
-    guard nums.count >= 4 else { return [] }
-    
-    var result = [[Int]]()
-    let sorted = nums.sorted(by: <)
-    
-    for i in 0..<sorted.count - 3 {
-      if i != 0 && sorted[i] == sorted[i - 1] { continue }
-      let first = sorted[i]
-      let rest = Array(sorted[(i + 1)..<sorted.count])
-      
-      for j in 0..<rest.count {
-        if j != 0 && rest[j] == rest[j - 1] { continue }
-        let second = rest[j]
-        var k = j + 1
-        var p = rest.count - 1
-        let twoSum = target - (first + second)
-        while k < p {
-          if rest[k] + rest[p] == twoSum {
-            result.append([first, second, rest[k], rest[p]])
-            k += 1
-            while k < p, rest[k] == rest[k - 1] {
-              k += 1
-            }
-          } else if rest[k] + rest[p] < twoSum {
-            k += 1
-            while k < p, rest[k] == rest[k - 1] {
-              k += 1
-            }
-          } else if rest[k] + rest[p] > twoSum {
-            p -= 1
-            while k < p, rest[p] == rest[p + 1] {
-              p -= 1
-            }
-          }
-        }
+  func search(_ nums: [Int], _ target: Int) -> Int {
+    if nums.count == 1 {
+      if target == nums.first! {
+        return 0
+      } else {
+        return -1
       }
     }
-    return result
+    
+    var k = 0
+    var i = nums.count - 1
+    var start = 0
+    var l = 0
+    var r = nums.count - 1
+    var division = [Int]()
+    
+    while i >= 1 && nums[i] > nums[i - 1] {
+      i -= 1
+      k += 1
+    }
+    
+    k += 1
+    k = k % (nums.count - 1)
+    
+    if target > nums[nums.count - k - 1] || target < nums[nums.count - k] {
+      return -1
+    } else if target < nums.last! {
+      division = Array(nums[(k + 1)...])
+      start = k + 1
+      r = division.count - 1
+    } else if target > nums.last! {
+      division = Array(nums[...k])
+    } else {
+      return nums.count - 1
+    }
+    
+    while l <= r {
+      let m = (l + r) / 2
+      if target == division[m] {
+        return start + m
+      } else if target > division[m] {
+        l = m + 1
+      } else {
+        r = m - 1
+      }
+    }
+    return -1
   }
 }
 
 let sol = Solution()
-print(sol.fourSum([-2,-1,-1,1,1,2,2], 0))
+print(sol.search([1], 0))

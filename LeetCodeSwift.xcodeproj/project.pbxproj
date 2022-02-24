@@ -23,8 +23,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BF437CD927C791F100EB1F98 /* FirstAndLastPositionInSortedArr.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = FirstAndLastPositionInSortedArr.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BF437CDB27C7926B00EB1F98 /* SearchAndInsert.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SearchAndInsert.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		BF964C8C27AA46D5008724B7 /* LeetCodeSwift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCodeSwift; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF964C8F27AA46D5008724B7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		BFE9975F27C73053003A9599 /* 3SumAnd4Sum.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 3SumAnd4Sum.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		BFE9976027C764AD003A9599 /* NextPermutation.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = NextPermutation.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +45,7 @@
 		BF964C8327AA46D5008724B7 = {
 			isa = PBXGroup;
 			children = (
+				BFE9975B27C72F21003A9599 /* Problems */,
 				BF964C8E27AA46D5008724B7 /* LeetCodeSwift */,
 				BF964C8D27AA46D5008724B7 /* Products */,
 			);
@@ -60,6 +65,17 @@
 				BF964C8F27AA46D5008724B7 /* main.swift */,
 			);
 			path = LeetCodeSwift;
+			sourceTree = "<group>";
+		};
+		BFE9975B27C72F21003A9599 /* Problems */ = {
+			isa = PBXGroup;
+			children = (
+				BFE9975F27C73053003A9599 /* 3SumAnd4Sum.playground */,
+				BFE9976027C764AD003A9599 /* NextPermutation.playground */,
+				BF437CD927C791F100EB1F98 /* FirstAndLastPositionInSortedArr.playground */,
+				BF437CDB27C7926B00EB1F98 /* SearchAndInsert.playground */,
+			);
+			path = Problems;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
